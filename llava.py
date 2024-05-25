@@ -207,7 +207,7 @@ class LlavaCaptioner:
         }
 
     RETURN_TYPES = ("STRING",)
-    OUTPUT_IS_LIST = (False,)
+    OUTPUT_IS_LIST = (True,)
     FUNCTION = "caption"
     OUTPUT_NODE = True
 
@@ -244,8 +244,7 @@ class LlavaCaptioner:
                 )
             )
             pbar.update(1)
-        result = "\n".join(tags)
-        return {"ui": {"tags": tags}, "result": (result,)}
+        return {"ui": {"tags": tags}, "result": (tags,)}
 
 
 NODE_CLASS_MAPPINGS = {
